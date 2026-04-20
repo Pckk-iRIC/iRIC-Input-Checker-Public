@@ -12,10 +12,18 @@ https://pckk-iric.github.io/iRIC-Input-Checker-Docs/
 
 https://github.com/Pckk-iRIC/iRIC-Input-Checker
 
+## 動作検証済みソルバー
+
+現在、主に以下のソルバーで動作確認しています。
+
+- Nays2DH
+
+他の iRIC ソルバーでも利用できる可能性はありますが、現時点ではすべてのソルバーでの動作を保証するものではありません。
+
 ## 問い合わせ
 
-質問、不具合報告、要望は、メインリポジトリの Issues から連絡してください。
+問い合わせ先は現在整備中です。
+
+不具合、要望、または対応を希望するソルバーがある場合は、メインリポジトリの Issues から連絡してください。
 
 https://github.com/Pckk-iRIC/iRIC-Input-Checker/issues
-
-問い合わせ先の運用が変わった場合に修正しやすいよう、このセクションは最小限の内容にしています。
