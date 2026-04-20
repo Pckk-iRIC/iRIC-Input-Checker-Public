@@ -24,6 +24,4 @@ https://github.com/Pckk-iRIC/iRIC-Input-Checker
 
 問い合わせ先は現在整備中です。
 
-不具合、要望、または対応を希望するソルバーがある場合は、メインリポジトリの Issues から連絡してください。
-
-https://github.com/Pckk-iRIC/iRIC-Input-Checker/issues
+不具合、要望、または対応を希望するソルバーがある場合は、管理者のメールまたは Teams へ連絡してください。
