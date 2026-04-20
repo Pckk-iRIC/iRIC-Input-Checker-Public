@@ -104,7 +104,7 @@
   <main>
     <header>
       <h1>iRIC Input Checker ダウンロード</h1>
-      <p class="muted">GitHub Releases API から公開済みリリースを取得し、実行ファイル一式の zip だけを表示します。</p>
+      <p class="muted">公開済みリリースから、実行ファイル一式の zip だけを表示します。</p>
     </header>
 
     <section class="panel" aria-live="polite">
@@ -122,17 +122,12 @@
   <script>
     const releasesEl = document.getElementById("releases");
     const statusEl = document.getElementById("status");
-    const apiUrl = "https://api.github.com/repos/Pckk-iRIC/iRIC-Input-Checker/releases";
+    const releasesUrl = "./releases.json";
 
     function formatBytes(size) {
       if (!Number.isFinite(size)) return "";
       const mib = size / (1024 * 1024);
       return `${mib.toFixed(1)} MB`;
-    }
-
-    function isAppArchive(asset) {
-      const name = asset && asset.name ? asset.name : "";
-      return /^iRIC_Input_Checker_v[\d.]+\.zip$/.test(name);
     }
 
     function renderAsset(asset) {
@@ -153,7 +148,7 @@
     }
 
     function renderRelease(release) {
-      const assets = (release.assets || []).filter(isAppArchive);
+      const assets = release.assets || [];
       if (assets.length === 0) return null;
 
       const section = document.createElement("section");
@@ -177,15 +172,12 @@
 
     async function main() {
       try {
-        const response = await fetch(apiUrl, {
-          headers: { "Accept": "application/vnd.github+json" },
-        });
+        const response = await fetch(releasesUrl, { cache: "no-store" });
         if (!response.ok) {
-          throw new Error(`GitHub API error: ${response.status}`);
+          throw new Error(`Download metadata error: ${response.status}`);
         }
         const releases = await response.json();
         const sections = releases
-          .filter((release) => !release.draft)
           .map(renderRelease)
           .filter(Boolean);
 
