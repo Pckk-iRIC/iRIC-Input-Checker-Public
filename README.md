@@ -2,6 +2,10 @@
 
 このリポジトリは、iRIC Input Checker の生成済みユーザードキュメントを公開するためのリポジトリです。
 
+## 公開ページ
+
+https://pckk-iric.github.io/iRIC-Input-Checker-Docs/
+
 ## ソースコード
 
 ソースコードとリリース成果物は、以下のメインリポジトリで管理しています。
